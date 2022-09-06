@@ -27,7 +27,7 @@ jobs:
     - name: Add Cert to Store
       run: certutil -user -q -p ${{ secrets.WINDOWS_CERT_PASSWORD }} -importpfx cert.pfx NoRoot
     - name: Build Windows x86 bit version
-      run: dotnet publish TestIssue9879/MauiApplication/MauiApplication.csproj -c Release -f:net6.0-windows10.0.19041.0 /p:GenerateAppxPackageOnBuild=true /p:Platform=x86 /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="${{ secrets.WINDOWS_CERT_THUMBPRINT }}" /p:RuntimeIdentifier=win10-x86
+      run: dotnet publish TestIssue9879/MauiApplication/MauiApplication.csproj -c Release -f:net6.0-windows10.0.19041.0 -r win10-x86 /p:GenerateAppxPackageOnBuild=true /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="${{ secrets.WINDOWS_CERT_THUMBPRINT }}" 
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3.1.0
       with:
