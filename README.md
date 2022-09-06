@@ -62,5 +62,3 @@ To build the x64 msix run:
 ```
 dotnet publish TestIssue9879/MauiApplication/MauiApplication.csproj -c Release -f:net6.0-windows10.0.19041.0 /p:GenerateAppxPackageOnBuild=true /p:Platform=x64 /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="<YOUR_THUMBPRINT>"
 ```
-
-

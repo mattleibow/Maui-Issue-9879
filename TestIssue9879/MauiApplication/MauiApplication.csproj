@@ -43,8 +43,8 @@
 	  <ProjectReference Include="..\MauiClassLibrary\MauiClassLibrary.csproj" />
 	</ItemGroup>
 
-	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-		<RuntimeIdentifier>win10-x86</RuntimeIdentifier>
+	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows' and '$(RuntimeIdentifierOverride)' != ''">
+		<RuntimeIdentifier>$(RuntimeIdentifierOverride)</RuntimeIdentifier>
 	</PropertyGroup>
 
 </Project>
